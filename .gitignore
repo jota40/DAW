@@ -1,0 +1,27 @@
+# === Eclipse ===
+.project
+.classpath
+.settings/
+.metadata/
+
+# === Java ===
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# === Build directories ===
+bin/
+build/
+target/
+out/
+
+# === IDEs adicionales (por si lo abres en otros) ===
+.idea/
+*.iml
+.vscode/
+
+# === Sistema operativo ===
+.DS_Store
+Thumbs.db
