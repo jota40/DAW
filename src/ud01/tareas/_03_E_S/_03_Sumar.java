@@ -2,7 +2,7 @@ package ud01.tareas._03_E_S;
 
 import java.util.Scanner;
 
-public class _03_Suma {
+public class _03_Sumar {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
