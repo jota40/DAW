@@ -1,4 +1,4 @@
-package ud01.ejemplos;
+package ud01.ejemplos.m02;
 import java.util.Scanner;
 
 public class _3_VariablesLocales {

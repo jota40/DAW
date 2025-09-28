@@ -1,4 +1,4 @@
-package ud01.ejemplos; // Ruta donde se encuentra la clase
+package ud01.ejemplos.m02; // Ruta donde se encuentra la clase
 
 import java.util.Random; // Importa una clasw de otra librería
                          // Ahorra escribir la ruta completa cada vez

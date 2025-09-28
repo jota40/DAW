@@ -1,6 +1,6 @@
 // public: Hace la clase es accesible desde otras clases
     // class: Crea una clase
-package ud01.ejemplos;
+package ud01.ejemplos.m02;
 
 public class _1_App { // Java requiere que todo el código esté dentro de una clase
 

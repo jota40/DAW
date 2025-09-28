@@ -1,4 +1,4 @@
-package ud01.ejemplos;
+package ud01.ejemplos.m02;
 import java.io.BufferedReader;
 import java.io.Console;
 import java.io.IOException;

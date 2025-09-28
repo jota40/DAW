@@ -1,4 +1,4 @@
-package ud01.ejemplos;
+package ud01.ejemplos.m02;
 public class _2_DesbordamientoByte {
     public static void main(String[] args) {
         byte a = 120;

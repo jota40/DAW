@@ -1,4 +1,4 @@
-package ud01.ejemplos;
+package ud01.ejemplos.m02;
 public class _4_SalidaPantalla {
     public static void main(String[] args) {
         int entero = 42;

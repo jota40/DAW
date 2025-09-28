@@ -1,7 +1,7 @@
-package ud01.ejemplos;
+package ud01.ejemplos.m03;
 import java.util.Scanner;
 
-public class _6_Condicionales {
+public class _2_Condicionales {
 
     // Scanner declarado como variable de clase
     static Scanner entrada;
