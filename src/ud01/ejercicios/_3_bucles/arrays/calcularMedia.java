@@ -1,4 +1,4 @@
-package ud01.ejercicios._4_arrays;
+package ud01.ejercicios._3_bucles.arrays;
 
 import java.util.Scanner;
 
