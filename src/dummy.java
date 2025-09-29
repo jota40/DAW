@@ -4,19 +4,13 @@ public class dummy {
     
 	public static void main(String[] args) {
 		PrintStream so = System.out;
-		int[] nums = {1, 2, 3, 4, 5};
 
-		for (int num : nums) {
-		  if ( num % 2 == 0) {
-		     continue;
-		}
-		  so.println(num);
-		}
+		int a = 5, b = 2;
+		float c = 2;
+		char l = 'L';
+		String t = "T";
 
-    
+		so.println(a-c);
+		
   }
 }
-
-
-
-	

@@ -1,4 +1,4 @@
-package ud01.tareas._04_Bucles;
+package ud01.tareas._04_PE;
 
 import java.time.Year;
 import java.util.Scanner;

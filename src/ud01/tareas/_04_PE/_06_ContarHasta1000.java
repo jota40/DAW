@@ -1,4 +1,4 @@
-package ud01.tareas._04_Bucles;
+package ud01.tareas._04_PE;
 
 public class _06_ContarHasta1000 {
     public static void main(String[] args) {

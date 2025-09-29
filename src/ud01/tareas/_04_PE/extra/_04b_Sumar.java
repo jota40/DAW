@@ -1,4 +1,4 @@
-package ud01.tareas._04_Bucles.extra;
+package ud01.tareas._04_PE.extra;
 
 import java.util.Scanner;
 
