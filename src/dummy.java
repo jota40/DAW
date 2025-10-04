@@ -1,16 +1,12 @@
-import java.io.PrintStream;
+class dummy {
 
-public class dummy {
-    
 	public static void main(String[] args) {
-		PrintStream so = System.out;
-
-		int a = 5, b = 2;
-		float c = 2;
-		char l = 'L';
-		String t = "T";
-
-		so.println(a-c);
-		
-  }
+		String a = "Hola";
+		String b = a.toUpperCase(); // ¿Cambia a?
+		String c = new String("Hola");
+		System.out.println(a); // "Hola" (no cambia)
+		System.out.println(b); // "HOLA"
+		System.out.println(a == c); // no
+		System.out.println(a.equals(c)); // si
+	}
 }

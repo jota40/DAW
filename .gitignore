@@ -1,27 +1,52 @@
-# === Eclipse ===
-.project
+# Build directories
+/target/
+/bin/
+# ======================
+# Maven
+# ======================
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# ======================
+# Eclipse
+# ======================
 .classpath
+.project
 .settings/
-.metadata/
+.loadpath
 
-# === Java ===
-*.class
-*.jar
-*.war
-*.ear
-hs_err_pid*
+# ======================
+# GWT
+# ======================
+*.cache.*
+*.gwt.rpc
+#*.gwt.xml
+#*.gwt.*
+*.swp
+# directorios generados por GWT compile o devmode
+war/
+WEB-INF/classes/
+*.gwt.rpc
 
-# === Build directories ===
-bin/
-build/
-target/
-out/
+# ======================
+# Logs
+# ======================
+*.log
 
-# === IDEs adicionales (por si lo abres en otros) ===
-.idea/
-*.iml
-.vscode/
-
-# === Sistema operativo ===
+# ======================
+# OS específicos
+# ======================
 .DS_Store
 Thumbs.db
+
+# ======================
+# Maven local repository
+# ======================
+# NO versionar tu repositorio local
+/.m2/

@@ -10,16 +10,14 @@ public class _02_SaludoEdad {
         System.out.println("Hola, soy tu PC.");
         System.out.print("¿Cuál es tu nombre? ");
         String nombre = sc.nextLine();
-/*
+
 		int anyo = 0;
 	    System.out.print("¿Cuál es tu año de nacimiento? ");
 		while(!sc.hasNextInt()) {
 			sc.nextLine(); // vacia el buffer
 			System.out.print("Un año es un número.\n¿Cuál es tu año de nacimiento? ");
 		} 
-*/
-	    System.out.print("¿Cuál es tu año de nacimiento? ");
-        int anyo = sc.nextInt();
+		anyo = sc.nextInt();
 
         int edad = Year.now().getValue() - anyo;
 
