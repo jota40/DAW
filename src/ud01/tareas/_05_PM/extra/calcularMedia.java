@@ -1,4 +1,4 @@
-package ud01.ejercicios._3_bucles.arrays;
+package ud01.tareas._05_PM.extra;
 
 import java.util.Scanner;
 

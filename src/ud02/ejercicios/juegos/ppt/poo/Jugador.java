@@ -1,4 +1,4 @@
-package ud01.ejercicios.juegos.ppt.poo;
+package ud02.ejercicios.juegos.ppt.poo;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ud01.ejercicios.juegos.ppt;
+package ud01.tareas._06_Final;
 
 import java.util.ArrayList;
 import java.util.List;

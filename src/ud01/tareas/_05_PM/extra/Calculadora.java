@@ -1,4 +1,4 @@
-package ud01.ejercicios._2_condicional;
+package ud01.tareas._05_PM.extra;
 
 import java.util.Scanner;
 
