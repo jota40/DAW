@@ -108,7 +108,7 @@ public class _04_Ahorcado {
 			System.out.println("2 - Salir");
 			System.out.print("Elige una opción: ");
 
-			opcion = Utils.leerNumero(sc);
+			opcion = Utils.leerEntero(sc);
 			switch (opcion) {
 			case 1:
 				jugar(sc);

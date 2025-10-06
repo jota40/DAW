@@ -2,6 +2,8 @@ package ud01.tareas._05_PM.extra;
 
 import java.util.Scanner;
 
+import common.Utils;
+
 public class calcularMedia {
     public static void main(String[] args) {
         final int SIZE = 5;
@@ -12,7 +14,7 @@ public class calcularMedia {
         // Leer notas
         for (int i = 0; i < SIZE; i++) {
             System.out.print("Nota " + (i + 1) + "? ");
-            nota[i] = sc.nextFloat();
+            nota[i] = (float) Utils.leerReal(sc);
         }
 
         // Calcular suma

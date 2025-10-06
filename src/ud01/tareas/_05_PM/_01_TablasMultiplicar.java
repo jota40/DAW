@@ -39,10 +39,10 @@ public class _01_TablasMultiplicar {
 					
 			// Pregunta cuántos multiplicandos
 			System.out.print("\n¿Hasta qué número quieres multiplicar? ");
-			cantidadMultiplicandos = Utils.leerNumero(sc);
+			cantidadMultiplicandos = Utils.leerEntero(sc);
 			while (cantidadMultiplicandos < 1) {
 				System.out.print("¿Hasta qué número quieres multiplicar? ");
-				cantidadMultiplicandos = Utils.leerNumero(sc);
+				cantidadMultiplicandos = Utils.leerEntero(sc);
 			}
 
 			System.out.printf("%nTabla de multiplicar del %d hasta %d:%n", tabla, cantidadMultiplicandos);

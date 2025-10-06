@@ -2,6 +2,8 @@ package ud01.tareas._05_PM.extra;
 
 import java.util.Scanner;
 
+import common.Utils;
+
 public class Calculadora {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -13,10 +15,10 @@ public class Calculadora {
 		operacion = sc.next().charAt(0); // Leer un solo caracter
 
 		System.out.print("Primer operando? ");
-		numero1 = sc.nextInt();
+		numero1 = Utils.leerEntero(sc);
 
 		System.out.print("Segundo operando? ");
-		numero2 = sc.nextInt();
+		numero2 = Utils.leerEntero(sc);
 
 		int resultado;
 

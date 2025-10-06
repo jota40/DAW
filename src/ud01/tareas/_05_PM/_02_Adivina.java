@@ -13,7 +13,7 @@ public class _02_Adivina {
 		do {
 			System.out.print("\nIntroduce un número (entre 1 y 100): ");
 
-			num = Utils.leerNumero(sc);
+			num = Utils.leerEntero(sc);
 
 			if (secreto > num)
 				System.out.println("Es mayor");
@@ -35,7 +35,7 @@ public class _02_Adivina {
 			System.out.println("2 - Salir");
 			System.out.print("\nIntroduce una opción: ");
 
-			opcion = Utils.leerNumero(sc);
+			opcion = Utils.leerEntero(sc);
 
 			switch (opcion) {
 			case 1:

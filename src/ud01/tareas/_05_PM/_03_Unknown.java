@@ -18,10 +18,10 @@ public class _03_Unknown {
         // Pedir límites validando que sean números
         do {
             System.out.print("Dime el límite inferior del número que has pensado: ");
-            min = Utils.leerNumero(sc);
+            min = Utils.leerEntero(sc);
 
             System.out.print("Dime el límite superior del número que has pensado: ");
-            max = Utils.leerNumero(sc);
+            max = Utils.leerEntero(sc);
             max++; // para incluir el límite superior
 
             if (min > max) {

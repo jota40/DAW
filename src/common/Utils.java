@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Utils {
 	// Función para leer un número validado
-	public static int leerNumero(Scanner sc) {
+	public static int leerEntero(Scanner sc) {
 		int numero;
 
 		while (!sc.hasNextInt()) {
@@ -17,7 +17,20 @@ public class Utils {
 		return numero;
 	}
 	
-	 // Lee una palabra, solo si está esta dentro de un array
+	public static double leerReal(Scanner sc) {
+		double numero;
+
+		while (!sc.hasNextDouble()) {
+			System.out.println("Eso no es un número. Repite por favor: ");
+			sc.nextLine(); // descartamos entrada incorrecta
+		}
+
+		numero = sc.nextDouble();
+		sc.nextLine();
+		return numero;
+	}
+
+	// Lee una palabra, solo si está esta dentro de un array
     public static String leerPalabraValida(Scanner sc, String[] palabrasValidas) {
         return palabrasValidas[leerPoscionPalabraValida(sc, palabrasValidas)];
     }

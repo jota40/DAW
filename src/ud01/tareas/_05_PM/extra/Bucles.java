@@ -2,65 +2,76 @@ package ud01.tareas._05_PM.extra;
 
 public class Bucles {
 
-	public static void printline(int i, int size) {
-		int j = 1;
-		while (j <= size - i) {
+	public static void printline(int asteriscos, int totalCaracteres) {
+		int indice = 1;
+		// espacios = total - asteriscos
+		while (indice <= totalCaracteres - asteriscos) {
 			System.out.print(" ");
-			j++;
+			indice++;
 		}
-		while (j <= size) {
+		// el resto son asteriscos
+		while (indice <= totalCaracteres) {
 			System.out.print("*");
-			j++;
+			indice++;
 		}
 	}
 
-	public static void t1(int size) {
-		for (int i = 1; i <= size; i++) {
-			printline(i, size);
+	public static void t1(int totalLineas) {
+		for (int asteriscos = 1; asteriscos <= totalLineas; asteriscos++) {
+			printline(asteriscos, totalLineas);
 			System.out.println();
 		}
 	}
 
-	public static void t2(int size) {
-		for (int i = 1; i <= size; i++) {
-			printline(i, i);
+	public static void t2(int totalLineas) {
+		for (int asteriscos = 1; asteriscos <= totalLineas; asteriscos++) {
+			printline(asteriscos, asteriscos);
 			System.out.println();
 		}
 	}
 
-	public static void t3(int size) {
-		for (int i = size; i > 0; i--) {
-			printline(i, size);
+	public static void t3(int totalLineas) {
+		for (int asteriscos = totalLineas; asteriscos > 0; asteriscos--) {
+			printline(asteriscos, totalLineas);
 			System.out.println();
 		}
 	}
 
-	public static void t4(int size) {
-		for (int i = size; i > 0; i--) {
-			printline(i, i);
+	public static void t4(int totalLineas) {
+		for (int asteriscos = totalLineas; asteriscos > 0; asteriscos--) {
+			printline(asteriscos, asteriscos);
 			System.out.println();
 		}
 	}
 
-	public static void p1(int size) {
-		for (int i = 1; i <= size; i++) {
-			printline(i, size);
-			printline(i, i);
+	public static void p1(int totalLineas) {
+		p1(totalLineas, 0);
+	}
+
+	public static void p1(int totalLineas, int impar) {
+		for (int esteriscos = 1; esteriscos <= totalLineas; esteriscos++) {
+			printline(esteriscos, totalLineas);
+			printline(esteriscos - impar, esteriscos - impar);
 			System.out.println();
 		}
 	}
 
-	public static void p2(int size) {
-		for (int i = size; i > 0; i--) {
-			printline(i, size);
-			printline(i, i);
+	public static void p2(int totalLineas) {
+		p2(totalLineas, 0);
+	}
+
+	public static void p2(int totalLineas, int impar) {
+
+		for (int asteriscos = totalLineas; asteriscos > 0; asteriscos--) {
+			printline(asteriscos, totalLineas);
+			printline(asteriscos - impar, asteriscos - impar);
 			System.out.println();
 		}
 	}
 
-	public static void r1(int size) {
-		p1(size);
-		p2(size);
+	public static void r1(int totalLineas) {
+		p1(totalLineas,1);
+		p2(totalLineas,1);
 	}
 
 	public static void main(String[] args) {

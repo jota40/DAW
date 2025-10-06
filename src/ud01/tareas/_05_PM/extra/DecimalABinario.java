@@ -2,17 +2,16 @@ package ud01.tareas._05_PM.extra;
 
 import java.util.Scanner;
 
+import common.Utils;
+
 public class DecimalABinario {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        // Leer el número como string
+        // Leer el número
         System.out.print("Introduce un número decimal: ");
-        String numeroStr = sc.nextLine();
-
-        // Convertir el número string a entero
-        int numero = Integer.parseInt(numeroStr);
+        int numero = Utils.leerEntero(sc);
 
         // Convertir a hexadecimal
         String hexStr = Integer.toHexString(numero).toUpperCase();
@@ -26,7 +25,7 @@ public class DecimalABinario {
 
             // Convertir el valor decimal a binario usando AND
             StringBuilder binario = new StringBuilder();
-            for (int bit = 3; bit >= 0; bit--) { // Cada dígito hexadecimal cabe en 4 bits
+            for (int bit = 3; bit >= 0; bit--) { // Cada dígito hexadecimal son 4 bits
                 int bitValor = (valorDecimal >> bit) & 1;
                 binario.append(bitValor);
             }
@@ -34,7 +33,7 @@ public class DecimalABinario {
             resultado.append(binario).append(" "); // Separador por dígito hexadecimal
         }
 
-        System.out.println("Número decimal: " + numeroStr);
+        System.out.println("Número decimal: " + numero);
         System.out.println("Número hexadecimal: " + hexStr);
         System.out.println("Número binario por dígito hex: " + resultado.toString());
 
