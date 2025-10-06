@@ -1,14 +1,14 @@
 package ud01.tareas._06_Final;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+import common.Utils;
+
 public class PPT_func {
 	public static void main(String[] args) {
-		List<String> jugadas = new ArrayList<>(List.of("piedra", "papel", "tijera"));
-		List<String> siNo = new ArrayList<>(List.of("si", "no"));
+        String[] jugadas = {"piedra", "papel", "tijera"};
+        String[] siNo = {"si", "no"};
 
 		Scanner sc = new Scanner(System.in);
 		Random random = new Random();
@@ -19,36 +19,33 @@ public class PPT_func {
 
 		do {
 			do {
-				jugadaJugadorStr = jugadaJugador(sc, jugadas);
-				jugadaJugador = jugadas.indexOf(jugadaJugadorStr);
+				System.out.print("¿Piedra, Papel o Tijera? ");
+				jugadaJugador = Utils.leerPoscionPalabraValida(sc, jugadas);
+				jugadaJugadorStr = jugadas[jugadaJugador];
 
 				jugadaPc = jugadaPC(random);
-				jugadaPcStr = jugadas.get(jugadaPc);
+				jugadaPcStr = jugadas[jugadaPc];
 				
 				mostrarJugadas(jugadaJugadorStr, jugadaPcStr);
-//				mostrarJugadas(jugadaJugador, jugadaPC);
+				mostrarJugadas(jugadaJugador, jugadaPc);
 
-				empate = calcularResultado(jugadas, jugadaJugadorStr, jugadaPcStr);
-//				empate = calcularResultado(jugadaJugador, jugadaPc);
+				empate = mostrarResultado(jugadas, jugadaJugadorStr, jugadaPcStr);
+				empate = mostrarResultado(jugadaJugador, jugadaPc);
 
 			} while (empate);
-			revancha = sc.nextLine().toLowerCase();
-			while (!siNo.contains(revancha)) {
-				System.out.print("No entiendo tu respuesta. Repite por favor: ");
-				revancha = sc.nextLine().toLowerCase();
-			} 
+			revancha = Utils.leerPalabraValida(sc, siNo);
 		} while (revancha.equals("si"));
 		System.out.println("\nHasta la próxima partida");
 	}
 
-	private static boolean calcularResultado(List<String> jugadas, String jugadaJugadorStr, String jugadaPcStr) {
+	private static boolean mostrarResultado(String[] jugadas, String jugadaJugadorStr, String jugadaPcStr) {
 		boolean empate = false;
 		if (jugadaJugadorStr.equals(jugadaPcStr)) {
 			System.out.println("\nLa partida no puede quedar en un EMPATE");
 			empate = true;
-		} else if (jugadaJugadorStr.equals(jugadas.get(0)) && jugadaPcStr.equals(jugadas.get(1))
-				|| jugadaJugadorStr.equals(jugadas.get(1)) && jugadaPcStr.equals(jugadas.get(2))
-				|| jugadaJugadorStr.equals(jugadas.get(2)) && jugadaPcStr.equals(jugadas.get(0))) {
+		} else if (jugadaJugadorStr.equals(jugadas[0]) && jugadaPcStr.equals(jugadas[1])
+				|| jugadaJugadorStr.equals(jugadas[1]) && jugadaPcStr.equals(jugadas[2])
+				|| jugadaJugadorStr.equals(jugadas[2]) && jugadaPcStr.equals(jugadas[0])) {
 			System.out.println("Has perdido");
 			System.out.print("\n¿Quieres que te de la revancha? ");
 		} else {
@@ -58,7 +55,7 @@ public class PPT_func {
 		return empate;
 	}
 
-	private static boolean calcularResultado(int jugadaJugador, int jugadaPc) {
+	private static boolean mostrarResultado(int jugadaJugador, int jugadaPc) {
 		boolean empate = false;
 		if (jugadaJugador == jugadaPc) {
 			System.out.println("\nLa partida no puede quedar en un EMPATE");
@@ -80,16 +77,6 @@ public class PPT_func {
 	private static void mostrarJugadas(String jugadaJugador, String jugadaPc) {
 		System.out.printf("Jugador = %s vs PC = %s\n", jugadaJugador, jugadaPc);
 	}
-
-	public static String jugadaJugador(Scanner sc, List<String> jugadas) {
-		String jugadaJugadorStr;
-		do {
-			System.out.print("¿Piedra, Papel o Tijera? ");
-			jugadaJugadorStr = sc.nextLine().toLowerCase();
-		} while (!jugadas.contains(jugadaJugadorStr));
-		return jugadaJugadorStr;
-	}
-
 	public static int jugadaPC(Random random) {
 		return random.nextInt(3);
 	}

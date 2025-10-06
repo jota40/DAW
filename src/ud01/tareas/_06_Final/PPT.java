@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+import common.Utils;
+
 public class PPT {
 	public static void main(String[] args) {
-		List<String> jugadas = new ArrayList<>(List.of("piedra", "papel", "tijera"));
-		List<String> siNo = new ArrayList<>(List.of("si", "no"));
+        String[] jugadas = {"piedra", "papel", "tijera"};
+        String[] siNo = {"si", "no"};
 
 		Scanner sc = new Scanner(System.in);
 		String jugadaJugadorStr, jugadaPCStr;
@@ -18,15 +20,13 @@ public class PPT {
 
 		do {
 			do {
-				do {
-					System.out.print("¿Piedra, Papel o Tijera? ");
-					jugadaJugadorStr = sc.nextLine().toLowerCase();
-				} while (!jugadas.contains(jugadaJugadorStr));
-				jugadaJugador = jugadas.indexOf(jugadaJugadorStr);
+				System.out.print("¿Piedra, Papel o Tijera? ");
+				jugadaJugador = Utils.leerPoscionPalabraValida(sc, jugadas);
+				jugadaJugadorStr = jugadas[jugadaJugador];
 
 				Random random = new Random(System.currentTimeMillis());
 				jugadaPC = random.nextInt(3);
-				jugadaPCStr = jugadas.get(jugadaPC);
+				jugadaPCStr = jugadas[jugadaPC];
 
 //				System.out.printf("Jugador = %d vs PC = %d\n", jugadaJugador, jugadaPC);
 				System.out.printf("Jugador = %s vs PC = %s\n", jugadaJugadorStr, jugadaPCStr);
@@ -43,9 +43,9 @@ public class PPT {
 				if (jugadaJugadorStr.equals(jugadaPCStr)) {
 					System.out.println("\nLa partida no puede quedar en un EMPATE");
 					empate = true;
-				} else if (jugadaJugadorStr.equals(jugadas.get(0)) && jugadaPCStr.equals(jugadas.get(1))
-						|| jugadaJugadorStr.equals(jugadas.get(1)) && jugadaPCStr.equals(jugadas.get(2))
-						|| jugadaJugadorStr.equals(jugadas.get(2)) && jugadaPCStr.equals(jugadas.get(0))) {
+				} else if (jugadaJugadorStr.equals(jugadas[0]) && jugadaPCStr.equals(jugadas[1])
+						|| jugadaJugadorStr.equals(jugadas[1]) && jugadaPCStr.equals(jugadas[2])
+						|| jugadaJugadorStr.equals(jugadas[2]) && jugadaPCStr.equals(jugadas[0])) {
 					System.out.println("Has perdido");
 					System.out.print("\n¿Quieres que te de la revancha? ");
 				} else {
@@ -53,11 +53,7 @@ public class PPT {
 					System.out.print("\n¿Me das la revancha? ");
 				}
 			} while (empate);
-			revancha = sc.nextLine().toLowerCase();
-			while (!siNo.contains(revancha)) {
-				System.out.print("No entiendo tu respuesta. Repite por favor: ");
-				revancha = sc.nextLine().toLowerCase();
-			} 
+			revancha = Utils.leerPalabraValida(sc, siNo);
 		} while (revancha.equals("si"));
 		System.out.println("\nHasta la próxima partida");
 	}

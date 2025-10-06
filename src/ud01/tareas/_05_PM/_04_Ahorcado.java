@@ -3,6 +3,8 @@ package ud01.tareas._05_PM;
 import java.io.Console;
 import java.util.Scanner;
 
+import common.Utils;
+
 public class _04_Ahorcado {
 
 	// Función que imprime la solución actual
@@ -96,20 +98,6 @@ public class _04_Ahorcado {
 		System.out.println("Número de intentos: " + intentos + "\n");
 	}
 	
-	// Función para leer un número validado
-	public static int leerNumero(Scanner sc) {
-		int numero;
-
-		while (!sc.hasNextInt()) {
-			System.out.println("Entrada no válida. Introduce un número.");
-			sc.next(); // descartamos entrada incorrecta
-		}
-
-		numero = sc.nextInt();
-		sc.nextLine();
-		return numero;
-	}
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int opcion;
@@ -120,7 +108,7 @@ public class _04_Ahorcado {
 			System.out.println("2 - Salir");
 			System.out.print("Elige una opción: ");
 
-			opcion = leerNumero(sc);
+			opcion = Utils.leerNumero(sc);
 			switch (opcion) {
 			case 1:
 				jugar(sc);

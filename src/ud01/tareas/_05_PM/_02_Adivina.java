@@ -1,6 +1,9 @@
 package ud01.tareas._05_PM;
+
 import java.util.Random;
 import java.util.Scanner;
+
+import common.Utils;
 
 public class _02_Adivina {
 
@@ -10,7 +13,7 @@ public class _02_Adivina {
 		do {
 			System.out.print("\nIntroduce un número (entre 1 y 100): ");
 
-			num = leerNumero(sc);
+			num = Utils.leerNumero(sc);
 
 			if (secreto > num)
 				System.out.println("Es mayor");
@@ -19,19 +22,6 @@ public class _02_Adivina {
 		} while (secreto != num);
 
 		System.out.println("\n¡Has acertado!");
-	}
-
-	// Función para leer un número validado
-	public static int leerNumero(Scanner sc) {
-		int numero;
-
-		while (!sc.hasNextInt()) {
-			System.out.println("Entrada no válida. Introduce un número.");
-			sc.next(); // descartamos entrada incorrecta
-		}
-
-		numero = sc.nextInt();
-		return numero;
 	}
 
 	public static void main(String[] args) {
@@ -45,7 +35,7 @@ public class _02_Adivina {
 			System.out.println("2 - Salir");
 			System.out.print("\nIntroduce una opción: ");
 
-			opcion = leerNumero(sc);
+			opcion = Utils.leerNumero(sc);
 
 			switch (opcion) {
 			case 1:

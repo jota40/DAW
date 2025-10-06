@@ -15,7 +15,7 @@ public class _05_Cumpleanyos {
 		int mesActual = calendario.get(Calendar.MONTH) + 1; // Enero = 0
 		int diaActual = calendario.get(Calendar.DAY_OF_MONTH);
 
-		int[] fechaNacimiento = obtenerFechaNacimiento(sc);
+		int[] fechaNacimiento = leerFechaNacimiento(sc);
 		edad = anioActual - fechaNacimiento[2];
 
 		if (fechaNacimiento[1] == mesActual && fechaNacimiento[0] == diaActual) {
@@ -33,7 +33,7 @@ public class _05_Cumpleanyos {
 		return (anio % 4 == 0) && (anio % 100 != 0 || anio % 400 == 0);
 	}
 
-	private static int[] obtenerFechaNacimiento(Scanner sc) {
+	private static int[] leerFechaNacimiento(Scanner sc) {
 	    // Índices descriptivos
 	    final int DIA = 0;
 	    final int MES = 1;

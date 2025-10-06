@@ -2,36 +2,9 @@ package ud01.tareas._05_PM;
 
 import java.util.Scanner;
 
+import common.Utils;
+
 public class _03_Unknown {
-
-    // Función para leer un número validado (sin mensaje)
-    public static int leerNumero(Scanner sc) {
-        while (!sc.hasNextInt()) {
-            System.out.println("Entrada no válida. Introduce un número entero.");
-            sc.nextLine(); // descartamos entrada incorrecta
-        }
-        return sc.nextInt();
-    }
-
-    // Función para leer una respuesta válida del usuario (sin mensaje)
-    public static String leerRespuestaValida(Scanner sc, String[] respuestas) {
-        String respuesta = sc.nextLine().trim().toLowerCase();
-        while (!esRespuestaValida(respuestas, respuesta)) {
-            System.out.print("No entiendo tu respuesta. Repite por favor: ");
-            respuesta = sc.nextLine().trim().toLowerCase();
-        }
-        return respuesta;
-    }
-
-    // Función que comprueba si la respuesta está en el array
-    public static boolean esRespuestaValida(String[] respuestas, String respuesta) {
-        for (String r : respuestas) {
-            if (r.equals(respuesta)) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     public static void main(String[] args) {
         String[] respuestas = {"mayor", "menor", "si"};
@@ -45,10 +18,10 @@ public class _03_Unknown {
         // Pedir límites validando que sean números
         do {
             System.out.print("Dime el límite inferior del número que has pensado: ");
-            min = leerNumero(sc);
+            min = Utils.leerNumero(sc);
 
             System.out.print("Dime el límite superior del número que has pensado: ");
-            max = leerNumero(sc);
+            max = Utils.leerNumero(sc);
             max++; // para incluir el límite superior
 
             if (min > max) {
@@ -68,8 +41,8 @@ public class _03_Unknown {
             num = (min + max) / 2;
             System.out.print("¿Es el " + num + "? ");
 
-            // Usamos la función para leer una respuesta válida
-            String respuesta = leerRespuestaValida(sc, respuestas);
+            // Usamos la función para leer una palabra válida
+            String respuesta = Utils.leerPalabraValida(sc, respuestas);
 
             if (respuesta.equals("si")) break;
 

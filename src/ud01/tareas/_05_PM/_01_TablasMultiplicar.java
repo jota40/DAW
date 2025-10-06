@@ -2,6 +2,8 @@ package ud01.tareas._05_PM;
 
 import java.util.Scanner;
 
+import common.Utils;
+
 public class _01_TablasMultiplicar {
 
 	// Función que verifica si la cadena es un número entero
@@ -20,47 +22,35 @@ public class _01_TablasMultiplicar {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String entrada;
-		int num, cont, limite;
+		String tablaStr;
+		int tabla, cantidadMultiplicandos;
 
 		System.out.println("=== GENERADOR DE TABLAS DE MULTIPLICAR ===");
 
-		// Pregunta inicial fuera del bucle
-		System.out.print("\nEscribe un número para generar su tabla (o 'fin' para salir): ");
-		entrada = scanner.nextLine().trim().toLowerCase();
+		do {
 
-		while (!entrada.equals("fin")) {
-
-			if (!esNumero(entrada)) {
-				System.out.println("Entrada no válida. Por favor, escribe un número o 'fin'.");
-			} else {
-				num = Integer.parseInt(entrada);
-
-				// Pregunta cuántos multiplicandos
+			System.out.print("\nElige que tabla quieres que genere o 'fin' para terminar: ");
+			tablaStr = scanner.nextLine().trim().toLowerCase();
+			while (!esNumero(tablaStr) && !tablaStr.equals("fin")) {
+				System.out.print("Elige que tabla quieres que genere o 'fin' para terminar: ");
+				tablaStr = scanner.nextLine().trim().toLowerCase();
+			}
+			tabla = Integer.parseInt(tablaStr); 
+					
+			// Pregunta cuántos multiplicandos
+			System.out.print("\n¿Hasta qué número quieres multiplicar? ");
+			cantidadMultiplicandos = Utils.leerNumero(scanner);
+			while (cantidadMultiplicandos < 1) {
 				System.out.print("¿Hasta qué número quieres multiplicar? ");
-				String entradaLimite = scanner.nextLine().trim();
-
-				// Comprueba que un número > 1
-				if (!esNumero(entradaLimite) || Integer.parseInt(entradaLimite) < 1) {
-					System.out.println("Entrada no válida. Por favor, escribe un número mayor que 0.");
-					continue;
-				} else {
-					limite = Integer.parseInt(entradaLimite);
-
-					System.out.printf("%nTabla de multiplicar del %d hasta %d:%n", num, limite);
-					cont = 1;
-
-					while (cont <= limite) {
-						System.out.printf("%d * %d = %d%n", num, cont, num * cont);
-						cont++;
-					}
-				}
+				cantidadMultiplicandos = Utils.leerNumero(scanner);
 			}
 
-			// Nueva pregunta dentro del bucle
-			System.out.print("\nEscribe otro número (o 'fin' para salir): ");
-			entrada = scanner.nextLine().trim().toLowerCase();
-		}
+			System.out.printf("%nTabla de multiplicar del %d hasta %d:%n", tabla, cantidadMultiplicandos);
+			for (int cont = 1 ; cont <= cantidadMultiplicandos ; cont++ ) {
+				System.out.printf("%d * %d = %d%n", tabla, cont, tabla * cont);
+			}
+
+		} while (!tablaStr.equals("fin"));
 
 		System.out.println("\n¡Gracias por usar el programa!");
 		scanner.close();
