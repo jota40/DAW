@@ -1,20 +1,19 @@
 package ud02.ejercicios.juegos.ppt.poo;
 
-import java.util.List;
 import java.util.Random;
 
 public class Pc {
-	private List<String> jugadas;
+	private String[] jugadas;
 	Random random;
 	private int jugada;
 
-	public Pc(List<String> jugadas) {
+	public Pc(String[] jugadas) {
 		this.jugadas = jugadas;
 		random = new Random();
 	}
 
 	public void juega() {
-		jugada = 1;//random.nextInt(3);
+		jugada =  random.nextInt(3);
 	}
 
 	public int getJugada() {
@@ -22,6 +21,6 @@ public class Pc {
 	}
 
 	public String getJugadaStr() {
-		return jugadas.get(jugada);
+		return jugadas[jugada];
 	}
 }

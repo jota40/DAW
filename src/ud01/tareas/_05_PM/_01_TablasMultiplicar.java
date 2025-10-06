@@ -21,7 +21,7 @@ public class _01_TablasMultiplicar {
 	}
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		String tablaStr;
 		int tabla, cantidadMultiplicandos;
 
@@ -30,19 +30,19 @@ public class _01_TablasMultiplicar {
 		do {
 
 			System.out.print("\nElige que tabla quieres que genere o 'fin' para terminar: ");
-			tablaStr = scanner.nextLine().trim().toLowerCase();
+			tablaStr = sc.nextLine().trim().toLowerCase();
 			while (!esNumero(tablaStr) && !tablaStr.equals("fin")) {
 				System.out.print("Elige que tabla quieres que genere o 'fin' para terminar: ");
-				tablaStr = scanner.nextLine().trim().toLowerCase();
+				tablaStr = sc.nextLine().trim().toLowerCase();
 			}
 			tabla = Integer.parseInt(tablaStr); 
 					
 			// Pregunta cuántos multiplicandos
 			System.out.print("\n¿Hasta qué número quieres multiplicar? ");
-			cantidadMultiplicandos = Utils.leerNumero(scanner);
+			cantidadMultiplicandos = Utils.leerNumero(sc);
 			while (cantidadMultiplicandos < 1) {
 				System.out.print("¿Hasta qué número quieres multiplicar? ");
-				cantidadMultiplicandos = Utils.leerNumero(scanner);
+				cantidadMultiplicandos = Utils.leerNumero(sc);
 			}
 
 			System.out.printf("%nTabla de multiplicar del %d hasta %d:%n", tabla, cantidadMultiplicandos);
@@ -53,6 +53,6 @@ public class _01_TablasMultiplicar {
 		} while (!tablaStr.equals("fin"));
 
 		System.out.println("\n¡Gracias por usar el programa!");
-		scanner.close();
+		sc.close();
 	}
 }

@@ -8,7 +8,7 @@ public class Utils {
 		int numero;
 
 		while (!sc.hasNextInt()) {
-			System.out.println("Entrada no válida. Introduce un número.");
+			System.out.println("Eso no es un número. Repite por favor: ");
 			sc.nextLine(); // descartamos entrada incorrecta
 		}
 
@@ -19,12 +19,7 @@ public class Utils {
 	
 	 // Lee una palabra, solo si está esta dentro de un array
     public static String leerPalabraValida(Scanner sc, String[] palabrasValidas) {
-        String palabra = sc.nextLine().trim().toLowerCase();
-        while (posicionPalabra(palabrasValidas, palabra) == -1) {
-            System.out.print("No entiendo tu respuesta. Repite por favor: ");
-            palabra = sc.nextLine().trim().toLowerCase();
-        }
-        return palabra;
+        return palabrasValidas[leerPoscionPalabraValida(sc, palabrasValidas)];
     }
     
 	 // Lee laposicion de una palabra, solo si está esta dentro de un array
@@ -39,7 +34,7 @@ public class Utils {
     }
 
     // Devuelve la posición de una palabra dentro de un array, o -1 si no la encuentra
-    public static int posicionPalabra(String[] palabrasValidas, String palabra) {
+    private static int posicionPalabra(String[] palabrasValidas, String palabra) {
         for (int i = 0; i < palabrasValidas.length; i++) {
             if (palabrasValidas[i].equals(palabra)) {
                 return i;

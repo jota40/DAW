@@ -1,14 +1,14 @@
 package ud02.ejercicios.juegos.ppt.poo;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
+
+import common.Utils;
 
 public class Arbitro {
 	public static Scanner sc = new Scanner(System.in);
 
-	private List<String> jugadas = new ArrayList<>(List.of("piedra", "papel", "tijera"));
-	private List<String> siNo = new ArrayList<>(List.of("si", "no"));
+    String[] jugadas = {"piedra", "papel", "tijera"};
+    String[] siNo = {"si", "no"};
 	private Jugador jugador;
 	private Pc pc;
 
@@ -27,13 +27,7 @@ public class Arbitro {
 				pc.juega();
 				mostrarJugadas();
 			} while (calcularResultado());
-			System.out.print("\n¿Quieres que arbitre otra partida? ");
-			otraPartida = sc.nextLine().toLowerCase();
-			while (!siNo.contains(otraPartida)) {
-				System.out.print("No entiendo tu respuesta. Repite por favor: ");
-				otraPartida = sc.nextLine().toLowerCase();
-			}
-			System.out.println();
+			otraPartida = Utils.leerPalabraValida(sc, siNo);
 		} while (otraPartida.equals("si"));
 		System.out.println("Hasta la próxima partida");
 
@@ -47,9 +41,9 @@ public class Arbitro {
 		if (jugadaJugador.equals(jugadaPc)) {
 			System.out.println("\nLa partida no puede quedar en un EMPATE");
 			empate = true;
-		} else if (jugadaJugador.equals(jugadas.get(0)) && jugadaPc.equals(jugadas.get(1))
-				|| jugadaJugador.equals(jugadas.get(1)) && jugadaPc.equals(jugadas.get(2))
-				|| jugadaJugador.equals(jugadas.get(2)) && jugadaPc.equals(jugadas.get(0))) {
+		} else if (jugadaJugador.equals(jugadas[0]) && jugadaPc.equals(jugadas[1])
+				|| jugadaJugador.equals(jugadas[1]) && jugadaPc.equals(jugadas[2])
+				|| jugadaJugador.equals(jugadas[2]) && jugadaPc.equals(jugadas[0])) {
 			System.out.println("Has perdido");
 			System.out.print("\n¿Quieres que te de la revancha? ");
 		} else {
@@ -67,8 +61,10 @@ public class Arbitro {
 			return true;
 		} else if (jugadaJugador % 3 == (jugadaPc - 1) % 3) {
 			System.out.println("Has perdido");
+			System.out.print("\n¿Quieres que te de la revancha? ");
 		} else {
 			System.out.println("Has ganado");
+			System.out.print("\n¿Me das la revancha? ");
 		}
 		return false;
 	}

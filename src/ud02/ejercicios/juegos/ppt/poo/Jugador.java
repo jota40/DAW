@@ -1,22 +1,18 @@
 package ud02.ejercicios.juegos.ppt.poo;
 
-import java.util.List;
+import common.Utils;
 
 public class Jugador {
-	private List<String> jugadas;
+	private String[] jugadas;
 	private int jugada;
 
-	public Jugador(List<String> jugadas) {
+	public Jugador(String[] jugadas) {
 		this.jugadas = jugadas;
 	}
 
 	public void juega() {
-		String jugadaStr;
-		do {
-			System.out.print("¿Piedra, Papel o Tijera? ");
-			jugadaStr = Arbitro.sc.nextLine().toLowerCase();
-		} while (!jugadas.contains(jugadaStr));
-		jugada = jugadas.indexOf(jugadaStr);
+		System.out.print("¿Piedra, Papel o Tijera? ");
+		jugada = Utils.leerPoscionPalabraValida(Arbitro.sc, jugadas);
 	}
 
 	public int getJugada() {
@@ -24,6 +20,6 @@ public class Jugador {
 	}
 
 	public String getJugadaStr() {
-		return jugadas.get(jugada);
+		return jugadas[jugada];
 	}
 }
