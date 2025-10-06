@@ -1,7 +1,5 @@
 package ud01.tareas._06_Final;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 

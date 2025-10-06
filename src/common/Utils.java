@@ -37,17 +37,7 @@ public class Utils {
         }
         return posicion;
     }
-/*
-    // Comprueba que una palabra esta dentro de un array de palabras validas
-    public static boolean esValida(String[] palabrasValidas, String palabra) {
-        for (String r : palabrasValidas) {
-            if (r.equals(palabra)) {
-                return true;
-            }
-        }
-        return false;
-    }
-    */
+
     // Devuelve la posición de una palabra dentro de un array, o -1 si no la encuentra
     public static int posicionPalabra(String[] palabrasValidas, String palabra) {
         for (int i = 0; i < palabrasValidas.length; i++) {

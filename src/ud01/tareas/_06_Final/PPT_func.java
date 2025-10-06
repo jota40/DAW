@@ -30,7 +30,7 @@ public class PPT_func {
 				mostrarJugadas(jugadaJugador, jugadaPc);
 
 				empate = mostrarResultado(jugadas, jugadaJugadorStr, jugadaPcStr);
-				empate = mostrarResultado(jugadaJugador, jugadaPc);
+//				empate = mostrarResultado(jugadaJugador, jugadaPc);
 
 			} while (empate);
 			revancha = Utils.leerPalabraValida(sc, siNo);
