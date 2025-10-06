@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import common.Utils;
 
-public class calcularMedia {
+public class _07_calcularMedia {
     public static void main(String[] args) {
         final int SIZE = 5;
         float[] nota = new float[SIZE];

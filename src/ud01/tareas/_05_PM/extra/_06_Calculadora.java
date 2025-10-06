@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 import common.Utils;
 
-public class Calculadora {
+public class _06_Calculadora {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
+		String[] operaciones = {"+","-","*","/"};
 		int numero1, numero2;
-		char operacion;
+		String operacion;
 
 		System.out.print("Operacion +|-|*|/ ? ");
-		operacion = sc.next().charAt(0); // Leer un solo caracter
+		operacion = Utils.leerPalabraValida(sc, operaciones); 
 
 		System.out.print("Primer operando? ");
 		numero1 = Utils.leerEntero(sc);
@@ -23,19 +23,19 @@ public class Calculadora {
 		int resultado;
 
 		switch (operacion) {
-		case '+':
+		case "+":
 			resultado = numero1 + numero2;
 			System.out.println(numero1 + " + " + numero2 + " = " + resultado);
 			break;
-		case '-':
+		case "-":
 			resultado = numero1 - numero2;
 			System.out.println(numero1 + " - " + numero2 + " = " + resultado);
 			break;
-		case '*':
+		case "*":
 			resultado = numero1 * numero2;
 			System.out.println(numero1 + " * " + numero2 + " = " + resultado);
 			break;
-		case '/':
+		case "/":
 			if (numero2 != 0) {
 				resultado = numero1 / numero2;
 				System.out.println(numero1 + " / " + numero2 + " = " + resultado);
