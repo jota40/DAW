@@ -87,7 +87,7 @@ public class EjecutarPractica {
      * la entrada desde un archivo con `pb.redirectInput()`. Sin embargo, podría servir
      * para enviar texto dinámico (por ejemplo, simular teclado).
      */
-    private static void enviarEntradaSimulada(Process proceso, String entrada) throws IOException {
+    private void enviarEntradaSimulada(Process proceso, String entrada) throws IOException {
         // Reemplaza los literales "\n" por saltos reales
         String[] lineas = entrada.replace("\\n", "\n").split("\n");
 
@@ -107,7 +107,7 @@ public class EjecutarPractica {
      * Lee la salida generada por el proceso (stdout y stderr combinados)
      * y la escribe de forma formateada en el writer de salida.
      */
-    private static void leerSalidaProceso(Process proceso, Writer salida) {
+    private void leerSalidaProceso(Process proceso, Writer salida) {
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(proceso.getInputStream(), StandardCharsets.UTF_8))) {
 
