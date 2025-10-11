@@ -1,29 +1,19 @@
-# Build directories
-/target/
-/bin/
-# ======================
-# Maven
-# ======================
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
+HELP.md
+
+### target ###
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### SO ###
+.DS_Store
+Thumbs.db
 
 # ======================
-# Eclipse
+# Framewoeks
 # ======================
-.classpath
-.project
-.settings/
-.loadpath
-
-# ======================
-# GWT
-# ======================
+### GWT ###
 *.cache.*
 *.gwt.rpc
 #*.gwt.xml
@@ -34,19 +24,63 @@ war/
 WEB-INF/classes/
 *.gwt.rpc
 
-# ======================
-# Logs
+### Maven ###
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# repository
+/.m2/
+
+### Logs##
 # ======================
 *.log
 
 # ======================
-# OS específicos
+# IDEs
 # ======================
-.DS_Store
-Thumbs.db
+### Eclipse ###
+.metadata/
+bin/
+.classpath
+.project
+.settings/
+.loadpath
+*.tmp
+*.bak
+*.swp
+*.log
+*.class
 
-# ======================
-# Maven local repository
-# ======================
-# NO versionar tu repositorio local
-/.m2/
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
