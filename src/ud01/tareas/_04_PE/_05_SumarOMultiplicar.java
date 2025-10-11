@@ -2,12 +2,14 @@ package ud01.tareas._04_PE;
 
 import java.util.Scanner;
 
+import common.Utils;
+
 public class _05_SumarOMultiplicar {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Introduce el 1er número: ");
-        int num1 = sc.nextInt();
+        int num1 = Utils.leerEntero(sc);
 
         System.out.print("Introduce el 2º número: ");
         int num2 = sc.nextInt();

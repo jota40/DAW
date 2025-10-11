@@ -1,0 +1,1 @@
+Compilando ud02                                                              -> Error.%nCompilando ud01                                                              -> Error.%nCompilando extras                                                            -> Compilado.%nCompilando common                                                            -> Compilado.%n

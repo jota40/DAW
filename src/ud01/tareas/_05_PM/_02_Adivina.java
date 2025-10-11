@@ -9,6 +9,7 @@ public class _02_Adivina {
 
 	public static void partida(Scanner sc, int secreto) {
 		int num;
+		int intentos = 0;
 
 		do {
 			System.out.print("\nIntroduce un número (entre 1 y 100): ");
@@ -19,9 +20,10 @@ public class _02_Adivina {
 				System.out.println("Es mayor");
 			else if (secreto < num)
 				System.out.println("Es menor");
+			intentos++;
 		} while (secreto != num);
 
-		System.out.println("\n¡Has acertado!");
+		System.out.println("\n¡Has acertado!. En " + intentos + " intentos");
 	}
 
 	public static void main(String[] args) {

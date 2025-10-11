@@ -13,6 +13,8 @@ public class _09_DecimalABinario {
         System.out.print("Introduce un número decimal: ");
         int numero = Utils.leerEntero(sc);
 
+        System.out.printf("%0b", numero);
+
         // Convertir a hexadecimal
         String hexadecimal = Integer.toHexString(numero).toUpperCase();
 
